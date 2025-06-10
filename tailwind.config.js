@@ -97,7 +97,7 @@ export default {
         card: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
         'card-hover':
           '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03)',
-        brand: '0 4px 14px 0 rgba(93, 141, 166, 0.15)', // Shadow using brand blue
+        brand: '0 4px 14px 0 rgba(93, 141, 166, 0.15)', 
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
