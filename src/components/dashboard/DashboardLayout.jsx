@@ -1,26 +1,54 @@
 import React, { useState } from 'react'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import Sidebar from './Sidebar'
 import Header from './Header'
 
-const DashboardLayout = ({
-  children,
-  currentPage = 'Dashboard',
-  user,
-  onNavigate,
-  onUserAction,
-}) => {
+const DashboardLayout = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
 
-  const handleSidebarItemSelect = (itemName) => {
-    if (onNavigate) {
-      onNavigate(itemName)
+  // Mock user data - you can replace this with actual user data from context/props
+  const user = {
+    name: 'Prince Chijioke',
+    role: 'Super admin',
+    avatar: '/avatar-placeholder.png',
+  }
+
+  // Determine active item and page title based on current route
+  const getActiveItem = () => {
+    const path = location.pathname
+    if (path === '/dashboard') return 'Dashboard'
+    if (path === '/dashboard/analytics') return 'Analytics & Reports'
+    // Add more routes as needed
+    return 'Dashboard'
+  }
+
+  const getCurrentPageTitle = () => {
+    const path = location.pathname
+    if (path === '/dashboard') return 'Dashboard'
+    if (path === '/dashboard/analytics') return 'Analytics & Reports'
+    // Add more routes as needed
+    return 'Dashboard'
+  }
+
+  const handleItemSelect = (itemName) => {
+    switch (itemName) {
+      case 'Dashboard':
+        navigate('/dashboard')
+        break
+      case 'Analytics & Reports':
+        navigate('/dashboard/analytics')
+        break
+      // Add more cases as you add more routes
+      default:
+        break
     }
   }
 
   const handleUserAction = (action) => {
-    if (onUserAction) {
-      onUserAction(action)
-    }
+    console.log('User action:', action)
+    // Handle user actions like logout, profile, etc.
   }
 
   return (
@@ -28,23 +56,21 @@ const DashboardLayout = ({
       <div
         className={`${
           sidebarCollapsed ? 'w-16' : 'w-64'
-        } transition-all duration-300`}
+        } transition-all duration-300 flex-shrink-0`}
       >
-        <Sidebar
-          activeItem={currentPage}
-          onItemSelect={handleSidebarItemSelect}
-          collapsed={sidebarCollapsed}
-        />
+        <Sidebar activeItem={getActiveItem()} onItemSelect={handleItemSelect} />
       </div>
 
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex-1 flex flex-col min-h-0">
         <Header
-          title={currentPage}
+          title={getCurrentPageTitle()}
           user={user}
           onProfileAction={handleUserAction}
         />
 
-        <main className="flex-1 overflow-y-auto p-6">{children}</main>
+        <main className="flex-1 overflow-y-auto bg-white">
+          <Outlet />
+        </main>
       </div>
     </div>
   )
