@@ -14,6 +14,7 @@ import CheckEmail from './components/auth/CheckEmail'
 import CreateNewPassword from './components/auth/CreateNewPassword'
 import DashboardLayout from './components/dashboard/DashboardLayout'
 import Dashboard from './components/Dashboard'
+import Database from './components/database'
 import Analytics from './components/analytics/Analytics'
 import ProtectedRoute from './components/common/ProtectedRoute'
 import './index.css'
@@ -42,6 +43,7 @@ function App() {
               >
                 <Route index element={<Dashboard />} />
                 <Route path="analytics" element={<Analytics />} />
+                <Route path="database" element={<Database />} />
               </Route>
 
               <Route path="/" element={<Navigate to="/auth/login" replace />} />

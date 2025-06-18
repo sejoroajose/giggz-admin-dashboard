@@ -20,6 +20,7 @@ const DashboardLayout = () => {
     const path = location.pathname
     if (path === '/dashboard') return 'Dashboard'
     if (path === '/dashboard/analytics') return 'Analytics & Reports'
+    if (path === '/dashboard/database') return 'Database' 
     // Add more routes as needed
     return 'Dashboard'
   }
@@ -28,6 +29,7 @@ const DashboardLayout = () => {
     const path = location.pathname
     if (path === '/dashboard') return 'Dashboard'
     if (path === '/dashboard/analytics') return 'Analytics & Reports'
+    if (path === '/dashboard/database') return 'User Database'
     // Add more routes as needed
     return 'Dashboard'
   }
@@ -39,6 +41,9 @@ const DashboardLayout = () => {
         break
       case 'Analytics & Reports':
         navigate('/dashboard/analytics')
+        break
+      case 'Database': 
+        navigate('/dashboard/database')
         break
       // Add more cases as you add more routes
       default:
