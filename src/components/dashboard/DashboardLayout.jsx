@@ -8,20 +8,19 @@ const DashboardLayout = () => {
   const navigate = useNavigate()
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
 
-  // Mock user data - you can replace this with actual user data from context/props
   const user = {
     name: 'Prince Chijioke',
     role: 'Super admin',
     avatar: '/avatar-placeholder.png',
   }
 
-  // Determine active item and page title based on current route
   const getActiveItem = () => {
     const path = location.pathname
     if (path === '/dashboard') return 'Dashboard'
     if (path === '/dashboard/analytics') return 'Analytics & Reports'
-    if (path === '/dashboard/database') return 'Database' 
-    // Add more routes as needed
+    if (path === '/dashboard/database') return 'Database'
+    if (path === '/dashboard/giggz-management') return 'Giggz Management'
+    if (path === '/dashboard/chats') return 'Chats'
     return 'Dashboard'
   }
 
@@ -30,7 +29,8 @@ const DashboardLayout = () => {
     if (path === '/dashboard') return 'Dashboard'
     if (path === '/dashboard/analytics') return 'Analytics & Reports'
     if (path === '/dashboard/database') return 'User Database'
-    // Add more routes as needed
+    if (path === '/dashboard/giggz-management') return 'Giggz Management'
+    if (path === '/dashboard/chats') return 'Users Chats'
     return 'Dashboard'
   }
 
@@ -42,8 +42,14 @@ const DashboardLayout = () => {
       case 'Analytics & Reports':
         navigate('/dashboard/analytics')
         break
-      case 'Database': 
+      case 'Database':
         navigate('/dashboard/database')
+        break
+      case 'Giggz Management':
+        navigate('/dashboard/giggz-management')
+        break
+      case 'Chats': 
+        navigate('/dashboard/chats')
         break
       // Add more cases as you add more routes
       default:
@@ -73,7 +79,7 @@ const DashboardLayout = () => {
           onProfileAction={handleUserAction}
         />
 
-        <main className="flex-1 overflow-y-auto bg-white">
+        <main className="flex-1  overflow-hidden">
           <Outlet />
         </main>
       </div>

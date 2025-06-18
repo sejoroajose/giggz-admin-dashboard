@@ -16,6 +16,8 @@ import DashboardLayout from './components/dashboard/DashboardLayout'
 import Dashboard from './components/Dashboard'
 import Database from './components/database'
 import Analytics from './components/analytics/Analytics'
+import GiggzManagement from './components/giggzManagement'
+import Chats from './components/chats'
 import ProtectedRoute from './components/common/ProtectedRoute'
 import './index.css'
 
@@ -44,6 +46,8 @@ function App() {
                 <Route index element={<Dashboard />} />
                 <Route path="analytics" element={<Analytics />} />
                 <Route path="database" element={<Database />} />
+                <Route path="giggz-management" element={<GiggzManagement />} />
+                <Route path="chats" element={<Chats />} />
               </Route>
 
               <Route path="/" element={<Navigate to="/auth/login" replace />} />
