@@ -21,6 +21,7 @@ const DashboardLayout = () => {
     if (path === '/dashboard/database') return 'Database'
     if (path === '/dashboard/giggz-management') return 'Giggz Management'
     if (path === '/dashboard/chats') return 'Chats'
+    if (path === '/dashboard/disputes') return 'Disputes'
     return 'Dashboard'
   }
 
@@ -31,6 +32,7 @@ const DashboardLayout = () => {
     if (path === '/dashboard/database') return 'User Database'
     if (path === '/dashboard/giggz-management') return 'Giggz Management'
     if (path === '/dashboard/chats') return 'Users Chats'
+    if (path === '/dashboard/disputes') return 'Disputes'
     return 'Dashboard'
   }
 
@@ -48,10 +50,12 @@ const DashboardLayout = () => {
       case 'Giggz Management':
         navigate('/dashboard/giggz-management')
         break
-      case 'Chats': 
+      case 'Chats':
         navigate('/dashboard/chats')
         break
-      // Add more cases as you add more routes
+      case 'Disputes':
+        navigate('/dashboard/disputes')
+        break
       default:
         break
     }
@@ -79,7 +83,7 @@ const DashboardLayout = () => {
           onProfileAction={handleUserAction}
         />
 
-        <main className="flex-1  overflow-hidden">
+        <main className="flex-1  overflow-y-auto">
           <Outlet />
         </main>
       </div>
