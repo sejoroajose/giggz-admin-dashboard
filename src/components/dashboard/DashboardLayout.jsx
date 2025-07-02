@@ -22,6 +22,7 @@ const DashboardLayout = () => {
     if (path === '/dashboard/giggz-management') return 'Giggz Management'
     if (path === '/dashboard/chats') return 'Chats'
     if (path === '/dashboard/disputes') return 'Disputes'
+    if (path === '/dashboard/verification') return 'Verification'
     return 'Dashboard'
   }
 
@@ -33,6 +34,7 @@ const DashboardLayout = () => {
     if (path === '/dashboard/giggz-management') return 'Giggz Management'
     if (path === '/dashboard/chats') return 'Users Chats'
     if (path === '/dashboard/disputes') return 'Disputes'
+    if (path === '/dashboard/verification') return 'Verification'
     return 'Dashboard'
   }
 
@@ -55,6 +57,9 @@ const DashboardLayout = () => {
         break
       case 'Disputes':
         navigate('/dashboard/disputes')
+        break
+      case 'Verification': 
+        navigate('/dashboard/verification')
         break
       default:
         break

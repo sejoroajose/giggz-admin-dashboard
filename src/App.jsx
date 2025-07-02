@@ -20,6 +20,7 @@ import GiggzManagement from './components/giggzManagement'
 import Disputes from './components/disputes'
 import Chats from './components/chats'
 import ProtectedRoute from './components/common/ProtectedRoute'
+import Verification from './components/verification'
 import './index.css'
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
                 <Route path="database" element={<Database />} />
                 <Route path="giggz-management" element={<GiggzManagement />} />
                 <Route path="disputes" element={<Disputes />} />
+                <Route path="verification" element={<Verification />} />
                 <Route path="chats" element={<Chats />} />
               </Route>
 
