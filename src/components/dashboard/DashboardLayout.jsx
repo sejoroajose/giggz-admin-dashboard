@@ -25,6 +25,7 @@ const DashboardLayout = () => {
     if (path === '/dashboard/verification') return 'Verification'
     if (path === '/dashboard/payroll') return 'Payroll'
     if (path === '/dashboard/settings') return 'Settings'
+    if (path === '/dashboard/terms-and-conditions') return 'Terms and Conditions'
     return 'Dashboard'
   }
 
@@ -39,6 +40,7 @@ const DashboardLayout = () => {
     if (path === '/dashboard/verification') return 'Verification'
     if (path === '/dashboard/payroll') return 'Payroll'
     if (path === '/dashboard/settings') return 'Settings'
+    if (path === '/dashboard/terms-and-conditions') return 'Terms & Conditions'
     return 'Dashboard'
   }
 
@@ -70,6 +72,9 @@ const DashboardLayout = () => {
         break
       case 'Settings':
         navigate('/dashboard/settings')
+        break
+      case 'Terms and Conditions':
+        navigate('/dashboard/terms-and-conditions')
         break
       default:
         break

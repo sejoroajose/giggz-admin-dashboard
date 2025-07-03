@@ -23,6 +23,7 @@ import ProtectedRoute from './components/common/ProtectedRoute'
 import Verification from './components/verification'
 import Payroll from './components/payroll'
 import Settings from './components/settings'
+import TermsAndConditions from './components/termsAndConditions'
 import './index.css'
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
                 <Route path="chats" element={<Chats />} />
                 <Route path="payroll" element={<Payroll />} />
                 <Route path="settings" element={<Settings />} />
+                <Route path="terms-and-conditions" element={<TermsAndConditions />} />
               </Route>
 
               <Route path="/" element={<Navigate to="/auth/login" replace />} />
