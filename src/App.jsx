@@ -21,6 +21,7 @@ import Disputes from './components/disputes'
 import Chats from './components/chats'
 import ProtectedRoute from './components/common/ProtectedRoute'
 import Verification from './components/verification'
+import Payroll from './components/payroll'
 import './index.css'
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
                 <Route path="disputes" element={<Disputes />} />
                 <Route path="verification" element={<Verification />} />
                 <Route path="chats" element={<Chats />} />
+                <Route path="payroll" element={<Payroll />} />
               </Route>
 
               <Route path="/" element={<Navigate to="/auth/login" replace />} />
