@@ -22,6 +22,7 @@ import Chats from './components/chats'
 import ProtectedRoute from './components/common/ProtectedRoute'
 import Verification from './components/verification'
 import Payroll from './components/payroll'
+import Settings from './components/settings'
 import './index.css'
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
                 <Route path="verification" element={<Verification />} />
                 <Route path="chats" element={<Chats />} />
                 <Route path="payroll" element={<Payroll />} />
+                <Route path="settings" element={<Settings />} />
               </Route>
 
               <Route path="/" element={<Navigate to="/auth/login" replace />} />

@@ -24,6 +24,7 @@ const DashboardLayout = () => {
     if (path === '/dashboard/disputes') return 'Disputes'
     if (path === '/dashboard/verification') return 'Verification'
     if (path === '/dashboard/payroll') return 'Payroll'
+    if (path === '/dashboard/settings') return 'Settings'
     return 'Dashboard'
   }
 
@@ -37,6 +38,7 @@ const DashboardLayout = () => {
     if (path === '/dashboard/disputes') return 'Disputes'
     if (path === '/dashboard/verification') return 'Verification'
     if (path === '/dashboard/payroll') return 'Payroll'
+    if (path === '/dashboard/settings') return 'Settings'
     return 'Dashboard'
   }
 
@@ -65,6 +67,9 @@ const DashboardLayout = () => {
         break
       case 'Payroll':
         navigate('/dashboard/payroll')
+        break
+      case 'Settings':
+        navigate('/dashboard/settings')
         break
       default:
         break
